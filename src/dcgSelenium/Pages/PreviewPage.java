@@ -1,9 +1,11 @@
 package dcgSelenium.Pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -12,6 +14,7 @@ public class PreviewPage extends SettingsPage {
 
 	public PreviewPage(WebDriver driver, WebDriverWait wait) {
 		super(driver, wait);
+		PageFactory.initElements(driver, this);
 	}
 
 	private static final String actualNameLocator = "//*[@id='inline-header-name']/div[1]/a[1]";
