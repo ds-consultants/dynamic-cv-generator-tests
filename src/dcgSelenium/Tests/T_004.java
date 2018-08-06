@@ -7,15 +7,12 @@ import dcgSelenium.Pages.LoginPage;
 public class T_004 extends BaseTest {
 
 	@Test
-	public void logOut() throws InterruptedException {
+	public void logOut() {
 
 		HomePage homePage = new HomePage(driver, wait);
 		LoginPage loginPage = new LoginPage(driver, wait);
 		homePage.logInUrl();
 		loginPage.LogIn("test@user.com", "asdasd1");
-
-		Thread.sleep(5000);
-
 		homePage.signOut();
 
 	}

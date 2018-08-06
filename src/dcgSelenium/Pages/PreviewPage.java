@@ -14,6 +14,7 @@ public class PreviewPage extends SettingsPage {
 	public PreviewPage(WebDriver driver, WebDriverWait wait) {
 		super(driver, wait);
 		PageFactory.initElements(driver, this);
+		
 	}
 
 	private static final String actualNameLocator = "//*[@id='inline-header-name']/div[1]/a[1]";

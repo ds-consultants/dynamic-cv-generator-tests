@@ -9,18 +9,15 @@ import dcgSelenium.Pages.SettingsPage;
 public class T_008 extends BaseTest {
 
 	@Test
-	public void addSkillset() throws InterruptedException {
+	public void addSkillset() {
 		HomePage homePage = new HomePage(driver, wait);
 		LoginPage loginPage = new LoginPage(driver, wait);
 		PreviewPage previewPage = new PreviewPage(driver, wait);
 		SettingsPage settingsPage = new SettingsPage(driver, wait);
 		homePage.logInUrl();
 		loginPage.LogIn("newuser2@ds.com", "pass123");
-		Thread.sleep(5000);
 		settingsPage.addSkills();
-		Thread.sleep(500);
 		homePage.goToPreview();
-		Thread.sleep(10000);
 		previewPage.checkSkills();
 		
 	}
