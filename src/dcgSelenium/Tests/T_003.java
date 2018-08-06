@@ -13,8 +13,8 @@ public class T_003 extends BaseTest {
 		RegisterPage registerPage = new RegisterPage(driver, wait);
 
 		homePage.registerUrl();
-		registerPage.registerUser("newuser2@ds.com", "pass123");
-		// homePage.goToLoginPage();
+		registerPage.registerUser("newuser23@ds.com", "pass123");
+		homePage.goToLoginPage();
 		Thread.sleep(5000);
 	}
 

@@ -14,7 +14,7 @@ public class T_001 extends BaseTest {
 
 		homePage.logInUrl();
 
-		// homePage.goToLoginPage();
+		homePage.goToLoginPage();
 
 		loginPage.LogIn("newuser2@ds.com", "pass123");
 	}

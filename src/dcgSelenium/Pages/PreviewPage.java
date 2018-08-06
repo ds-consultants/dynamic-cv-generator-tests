@@ -1,6 +1,5 @@
 package dcgSelenium.Pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -30,12 +29,14 @@ public class PreviewPage extends SettingsPage {
 	private static final String actualExpPlaceLocator = " //*[@id='inline-experience-company-name']/div[1]/a[1]";
 	private static final String actualExpTimeLocator = "//*[@id='inline-experience-time-period']/div[1]/a[1]";
 	private static final String actualExpPositionLocator = "//*[@id='inline-experience-professional-title']/div[1]/a[1]";
-	private static final String actualMainProjectPlaceLocator = "//*[@id='inline-project-description' and @class='ng-untouched ng-valid ng-dirty']/div[1]/a[1]";
-	private static final String actualTagMainProjectLocator = "//div[1]/app-project[1]/p[3]/app-project-technologies[1]/span[1]";
+	private static final String actualMainProjectPlaceLocator = "//div[1]/app-project[1]/div[@class='project-row' and 1]/p[@class='description' and 2]/inline-editor[@id='inline-project-description' and @class='ng-untouched ng-pristine ng-valid' and 1]/div[1]/a[1]";
+	private static final String actualTagMainProjectLocator = "//div[1]/app-project[1]/div[@class='project-row' and 1]/p[@class='technologies ng-star-inserted' and 3]/app-project-technologies[1]/span[@class='ng-star-inserted' and 1]";
 	private static final String actualProjectNameLocator = "//*[@id='inline-project-name']/div[1]/a[1]";
 	private static final String actualProjectTitleLocator = "//*[@id='inline-project-professional-title']/div[1]/a[1]";
-	private static final String actualProjectPlaceLocator = "//*[@class='ng-untouched ng-valid ng-dirty']/div[1]/a[1]";
-	private static final String actualProjectTagsLocator = "//*[@class='ds-project']/p[3]/app-project-technologies[1]/span[1]";
+	private static final String actualProjectPlaceLocator = "//app-project[@class='ds-project']/div[@class='project-row' and 1]/p[@class='description' and 2]/inline-editor[@id='inline-project-description' and @class='ng-untouched ng-pristine ng-valid' and 1]/div[@id='inlineEditWrapper' and 1]/a[@class='c-inline-editor' and 1]";
+	private static final String actualProjectTagsLocator = "//app-project[@class='ds-project']/div[@class='project-row' and 1]/p[@class='technologies ng-star-inserted' and 3]/app-project-technologies[1]/span[@class='ng-star-inserted' and 1]";
+
+	private static final String actualSkillTagLocator = "//li[@class='main-skill ng-star-inserted']";
 
 	@FindBy(xpath = actualNameLocator)
 	WebElement actualName;
@@ -74,6 +75,9 @@ public class PreviewPage extends SettingsPage {
 	@FindBy(xpath = actualProjectTagsLocator)
 	WebElement actualProjectTags;
 
+	@FindBy(xpath = actualSkillTagLocator)
+	WebElement actualSkillTag;
+
 	@Test
 	public void checkBaiscInfo() {
 		Assert.assertEquals(actualName.getText(), expectedName);
@@ -101,6 +105,11 @@ public class PreviewPage extends SettingsPage {
 		Assert.assertEquals(actualProjectTitle.getText(), expectedProjectTitle);
 		Assert.assertEquals(actualProjectPlace.getText(), expectedProjectPlace);
 		Assert.assertEquals(actualProjectTags.getText(), expectedProjectTags);
+	}
+
+	@Test
+	public void checkSkills() {
+		Assert.assertEquals(actualSkillTag.getText(), expectedTags);
 	}
 
 }
