@@ -9,6 +9,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import dcgSelenium.Pages.DOM.Settings_Page.BasicInfo;
+import dcgSelenium.Pages.DOM.Settings_Page.Education;
+import dcgSelenium.Pages.DOM.Settings_Page.Experience;
+import dcgSelenium.Pages.DOM.Settings_Page.Skills;
+
 public class PreviewPage extends SettingsPage {
 
 	public PreviewPage(WebDriver driver, WebDriverWait wait) {
@@ -81,36 +86,36 @@ public class PreviewPage extends SettingsPage {
 
 	@Test
 	public void checkBaiscInfo() {
-		Assert.assertEquals(actualName.getText(), expectedName);
-		Assert.assertEquals(actualTitle.getText(), expectedTitle);
-		Assert.assertEquals(actualExpect.getText(), expectedExp);
-		Assert.assertEquals(actualNote.getText(), expectedNote);
+		Assert.assertEquals(actualName.getText(), BasicInfo.expectedName);
+		Assert.assertEquals(actualTitle.getText(), BasicInfo.expectedTitle);
+		Assert.assertEquals(actualExpect.getText(), BasicInfo.expectedExp);
+		Assert.assertEquals(actualNote.getText(), BasicInfo.expectedNote);
 	}
 
 	@Test
 	public void checkEducation() {
-		Assert.assertEquals(actualEduTime.getText(), expectedEduTime);
-		Assert.assertEquals(actualEduName.getText(), expectedEduName);
-		Assert.assertEquals(actualEduNamePlace.getText(), expectedEduNamePlace);
-		Assert.assertEquals(actualEduCity.getText(), expectedEduCity);
+		Assert.assertEquals(actualEduTime.getText(), Education.expectedEduTime);
+		Assert.assertEquals(actualEduName.getText(), Education.expectedEduName);
+		Assert.assertEquals(actualEduNamePlace.getText(), Education.expectedEduNamePlace);
+		Assert.assertEquals(actualEduCity.getText(), Education.expectedEduCity);
 	}
 
 	@Test
 	public void checkExperience() {
-		Assert.assertEquals(actualExpPlace.getText(), expectedExperiencePlace);
-		Assert.assertEquals(actualExpTime.getText(), expectedExperienceTime);
-		Assert.assertEquals(actualExpPostition.getText(), expectedExperiencePosition);
-		Assert.assertEquals(actualMainProjectPlace.getText(), expectedMainProjectPlace);
-		Assert.assertEquals(actualTagMainProject.getText(), expectedTagMainProject);
-		Assert.assertEquals(actualProjectName.getText(), expectedProjectName);
-		Assert.assertEquals(actualProjectTitle.getText(), expectedProjectTitle);
-		Assert.assertEquals(actualProjectPlace.getText(), expectedProjectPlace);
-		Assert.assertEquals(actualProjectTags.getText(), expectedProjectTags);
+		Assert.assertEquals(actualExpPlace.getText(), Experience.expectedExperiencePlace);
+		Assert.assertEquals(actualExpTime.getText(), Experience.expectedExperienceTime);
+		Assert.assertEquals(actualExpPostition.getText(), Experience.expectedExperiencePosition);
+		Assert.assertEquals(actualMainProjectPlace.getText(), Experience.expectedMainProjectPlace);
+		Assert.assertEquals(actualTagMainProject.getText(), Experience.expectedTagMainProject);
+		Assert.assertEquals(actualProjectName.getText(), Experience.expectedProjectName);
+		Assert.assertEquals(actualProjectTitle.getText(), Experience.expectedProjectTitle);
+		Assert.assertEquals(actualProjectPlace.getText(), Experience.expectedProjectPlace);
+		Assert.assertEquals(actualProjectTags.getText(), Experience.expectedProjectTags);
 	}
 
 	@Test
 	public void checkSkills() {
-		Assert.assertEquals(actualSkillTag.getText(), expectedTags);
+		Assert.assertEquals(actualSkillTag.getText(), Skills.expectedTags);
 	}
 
 }

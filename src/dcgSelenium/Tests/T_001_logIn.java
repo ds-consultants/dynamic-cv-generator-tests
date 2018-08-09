@@ -10,7 +10,9 @@ public class T_001_logIn extends BaseTest {
 	public void loginCorrect() {
 
 		HomePage homePage = new HomePage(driver, wait);
+		
 		LoginPage loginPage = new LoginPage(driver, wait);
+		
 
 		homePage.logInUrl();
 

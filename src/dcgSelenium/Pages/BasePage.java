@@ -16,6 +16,9 @@ public class BasePage {
 		this.wait = wait;
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
+	
+	
+	
 
 	// Click Method
 	public void click(By elementLocation) {
