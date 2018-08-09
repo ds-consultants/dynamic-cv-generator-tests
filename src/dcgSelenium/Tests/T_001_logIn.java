@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import dcgSelenium.Pages.HomePage;
 import dcgSelenium.Pages.LoginPage;
 
-public class T_001 extends BaseTest {
+public class T_001_logIn extends BaseTest {
 
 	@Test(priority = 0)
 	public void loginCorrect() {

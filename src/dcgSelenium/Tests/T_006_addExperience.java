@@ -6,7 +6,7 @@ import dcgSelenium.Pages.LoginPage;
 import dcgSelenium.Pages.PreviewPage;
 import dcgSelenium.Pages.SettingsPage;
 
-public class T_007 extends BaseTest {
+public class T_006_addExperience extends BaseTest {
 
 	@Test
 	public void addExperience() {

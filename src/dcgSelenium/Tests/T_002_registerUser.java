@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import dcgSelenium.Pages.HomePage;
 import dcgSelenium.Pages.RegisterPage;
 
-public class T_003 extends BaseTest {
+public class T_002_registerUser extends BaseTest {
 
 	@Test
 	public void registerUser() {

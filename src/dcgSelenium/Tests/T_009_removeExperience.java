@@ -3,23 +3,19 @@ package dcgSelenium.Tests;
 import org.testng.annotations.Test;
 import dcgSelenium.Pages.HomePage;
 import dcgSelenium.Pages.LoginPage;
-import dcgSelenium.Pages.PreviewPage;
 import dcgSelenium.Pages.SettingsPage;
 
-public class T_005 extends BaseTest {
+
+public class T_009_removeExperience extends BaseTest {
 
 	@Test
-	public void addBasicInfo() {
-
+	public void removeExperirence() {
 		HomePage homePage = new HomePage(driver, wait);
 		LoginPage loginPage = new LoginPage(driver, wait);
-		PreviewPage previewPage = new PreviewPage(driver, wait);
 		homePage.logInUrl();
 		loginPage.LogIn("newuser2@ds.com", "pass123");
 		SettingsPage settingsPage = new SettingsPage(driver, wait);
-		settingsPage.fillBasicInfo();
-		homePage.goToPreview();
-		previewPage.checkBaiscInfo();
-
+		settingsPage.removeExp();
 	}
+
 }
