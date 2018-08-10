@@ -3,3 +3,4 @@ test-output/*
 .metadata
 target/*
 bin/.gitignore
+/target/

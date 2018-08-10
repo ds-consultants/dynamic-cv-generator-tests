@@ -20,7 +20,6 @@ public class SettingsPage extends BasePage {
 		
 	}
 
-
 	public void fillBasicInfo() {
 
 		driver.findElement(By.name(BasicInfo.nameid)).clear();
