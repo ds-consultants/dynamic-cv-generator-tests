@@ -52,6 +52,8 @@
 				<version>2.22.0</version>
 				
 				<configuration>
+				<parallel>methods</parallel>
+<threadCount>${threads}</threadCount>
 					<systemPropertyVariables>
 						<browser>${browser}</browser>
 					</systemPropertyVariables>
