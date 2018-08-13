@@ -9,10 +9,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import dcgSelenium.Pages.DOM.Settings_Page.BasicInfo;
-import dcgSelenium.Pages.DOM.Settings_Page.Education;
-import dcgSelenium.Pages.DOM.Settings_Page.Experience;
-import dcgSelenium.Pages.DOM.Settings_Page.Skills;
+import dcgSelenium.FactoryPages.Settings_Page.BasicInfo;
+import dcgSelenium.FactoryPages.Settings_Page.Education;
+import dcgSelenium.FactoryPages.Settings_Page.Experience;
+import dcgSelenium.FactoryPages.Settings_Page.Skills;
 
 public class PreviewPage extends SettingsPage {
 

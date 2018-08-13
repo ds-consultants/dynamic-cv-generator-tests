@@ -40,8 +40,32 @@
 					</suiteXmlFiles>
 					<testFailureIgnore>true</testFailureIgnore>
 					<parallel>methods</parallel>
-          			<threadCount>10</threadCount>
+					<threadCount>10</threadCount>
+
 				</configuration>
+				
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>2.22.0</version>
+				
+				<configuration>
+					<systemPropertyVariables>
+						<browser>${browser}</browser>
+					</systemPropertyVariables>
+					
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>integration-test</goal>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
+
 			</plugin>
 		</plugins>
 	</build>
