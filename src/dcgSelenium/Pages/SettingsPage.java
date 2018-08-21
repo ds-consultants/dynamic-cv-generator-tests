@@ -3,162 +3,101 @@ package dcgSelenium.Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import dcgSelenium.FactoryPages.Settings_Page.BasicInfo;
+import dcgSelenium.FactoryPages.Settings_Page.Education;
+import dcgSelenium.FactoryPages.Settings_Page.Experience;
+import dcgSelenium.FactoryPages.Settings_Page.Skills;
 
 public class SettingsPage extends BasePage {
 
 	public SettingsPage(WebDriver driver, WebDriverWait wait) {
 		super(driver, wait);
+		
+		
 	}
-
-	// basic info
-	String nameid = "name";
-	String titlechckid = "title";
-	String professionalExpid = "professionalExpectations";
-	String personalNoteid = "personalNote";
-
-	// education
-	String educationbtn = "education-add-button";
-	String eduCity = "educationPlace";
-	String eduTime = "educationTime";
-	String eduName = "educationName";
-	String eduNamePlace = "educationNamePlace";
-
-	// experience
-	String addExperienceBtn = "add-experience-button";
-	String experiencePlace = "experiencePlace";
-	String experienceTime = "experienceTime";
-	String experiencePosition = "experiencePosition";
-	String mainProjectPlace = "mainProjectPlace";
-	String tagMainProject = "//*[@id='main-project-technologies']/tag-input/div/div/tag-input-form/form/input";
-	String mainProjectAddBtn = "main-project-add-button";
-	String projectName = "projectName";
-	String projectTitle = "projectTitle";
-	String projectPlace = "projectPlace";
-	String projectTags = "//*[@id='project-technologies']/tag-input/div/div/tag-input-form/form/input";
-	String projectAddBtn = "project-add-button";
-	String saveExperience = "experience-save-button";
-
-	// skills
-	String skillsetAddBtn = "skillset-add-button";
-	String skillName = "newSkillset";
-	String skillSaveBtn = "skillset-save-button";
-	String newTagField = "//tag-input-form[@class='ng-tns-c5-4']/form[1]/input[1]";
-
-	// expected basic info
-	String expectedName = "Jan Kowalski";
-	String expectedTitle = "QA Consultant";
-	String expectedExp = "test 123456789";
-	String expectedNote = "test personal note 12345";
-
-	// expected edu info
-	String expectedEduCity = "Bialystok";
-	String expectedEduTime = "2009-2013";
-	String expectedEduName = "Computer Science";
-	String expectedEduNamePlace = "Bialystok Technical University";
-	// expected exp info
-	String expectedExperiencePlace = "Company";
-	String expectedExperienceTime = "2016-2018";
-	String expectedExperiencePosition = "QA";
-	String expectedMainProjectPlace = "Description";
-	String expectedTagMainProject = "Java, Selenium, Eclipse";
-	String expectedProjectName = "Name of project";
-	String expectedProjectTitle = "QA";
-	String expectedProjectPlace = "Description of project";
-	String expectedProjectTags = "Selenium, Appium, Python";
-
-	// expected skills
-	String expectedSkillName = "My skills";
-	String expectedTags = "Selenium, Python, Appium";
-
-	String removeExpBtn = "experience-remove-button";
-	String removeEduBtn = "education-remove-button";
-	String removeSkillBtn = "skillset-my-skills-remove-button";
-	String removeProjBtn = "project-remove-button";
-	String removeMainProjBtn = "main-project-remove-button";
-	String newHireBtn = "new-hire-button";
 
 	public void fillBasicInfo() {
 
-		driver.findElement(By.name(nameid)).clear();
-		writeText(By.name(nameid), expectedName);
-		Select oSelect = new Select(driver.findElement(By.name(titlechckid)));
-		oSelect.selectByVisibleText(expectedTitle);
-		driver.findElement(By.id(professionalExpid)).clear();
-		writeText(By.id(professionalExpid), expectedExp);
-		driver.findElement(By.id(personalNoteid)).clear();
-		writeText(By.id(personalNoteid), expectedNote);
+		driver.findElement(By.name(BasicInfo.nameid)).clear();
+		writeText(By.name(BasicInfo.nameid), BasicInfo.expectedName);
+		Select oSelect = new Select(driver.findElement(By.name(BasicInfo.titlechckid)));
+		oSelect.selectByVisibleText(BasicInfo.expectedTitle);
+		driver.findElement(By.id(BasicInfo.professionalExpid)).clear();
+		writeText(By.id(BasicInfo.professionalExpid), BasicInfo.expectedExp);
+		driver.findElement(By.id(BasicInfo.personalNoteid)).clear();
+		writeText(By.id(BasicInfo.personalNoteid), BasicInfo.expectedNote);
 	}
 
 	public void fillEducation() {
-		driver.findElement(By.id(educationbtn)).click();
-		writeText(By.name(eduCity), expectedEduCity);
-		writeText(By.name(eduTime), expectedEduTime);
-		writeText(By.name(eduName), expectedEduName);
-		writeText(By.name(eduNamePlace), expectedEduNamePlace);
+		driver.findElement(By.id(Education.educationbtn)).click();
+		writeText(By.name(Education.eduCity), Education.expectedEduCity);
+		writeText(By.name(Education.eduTime), Education.expectedEduTime);
+		writeText(By.name(Education.eduName), Education.expectedEduName);
+		writeText(By.name(Education.eduNamePlace), Education.expectedEduNamePlace);
 		driver.findElement(By.id("education-save-button")).click();
 	}
 
 	public void addBasciExperience() {
-		driver.findElement(By.id(addExperienceBtn)).click();
-		writeText(By.name(experiencePlace), expectedExperiencePlace);
-		writeText(By.name(experienceTime), expectedExperienceTime);
-		writeText(By.name(experiencePosition), expectedExperiencePosition);
+		driver.findElement(By.id(Experience.addExperienceBtn)).click();
+		writeText(By.name(Experience.experiencePlace), Experience.expectedExperiencePlace);
+		writeText(By.name(Experience.experienceTime), Experience.expectedExperienceTime);
+		writeText(By.name(Experience.experiencePosition), Experience.expectedExperiencePosition);
 
 	}
 
 	public void addMainProject() {
-		writeText(By.name(mainProjectPlace), expectedMainProjectPlace);
-		driver.findElement(By.xpath(tagMainProject)).sendKeys(expectedTagMainProject);
-		driver.findElement(By.xpath(tagMainProject)).sendKeys(Keys.ENTER);
-		click(By.id(mainProjectAddBtn));
+		writeText(By.name(Experience.mainProjectPlace), Experience.expectedMainProjectPlace);
+		driver.findElement(By.xpath(Experience.tagMainProject)).sendKeys(Experience.expectedTagMainProject);
+		driver.findElement(By.xpath(Experience.tagMainProject)).sendKeys(Keys.ENTER);
+		click(By.id(Experience.mainProjectAddBtn));
 	}
 
 	public void addProject() {
-		writeText(By.name(projectName), expectedProjectName);
-		writeText(By.name(projectTitle), expectedProjectTitle);
-		writeText(By.name(projectPlace), expectedProjectPlace);
-		driver.findElement(By.xpath(projectTags)).sendKeys(expectedProjectTags);
-		driver.findElement(By.xpath(projectTags)).sendKeys(Keys.ENTER);
-		click(By.id(projectAddBtn));
-		click(By.id(saveExperience));
+		writeText(By.name(Experience.projectName), Experience.expectedProjectName);
+		writeText(By.name(Experience.projectTitle), Experience.expectedProjectTitle);
+		writeText(By.name(Experience.projectPlace), Experience.expectedProjectPlace);
+		driver.findElement(By.xpath(Experience.projectTags)).sendKeys(Experience.expectedProjectTags);
+		driver.findElement(By.xpath(Experience.projectTags)).sendKeys(Keys.ENTER);
+		click(By.id(Experience.projectAddBtn));
+		click(By.id(Experience.saveExperience));
 
 	}
 
 	public void addSkills() {
-		click(By.id(skillsetAddBtn));
-		click(By.id(skillName));
-		writeText(By.id(skillName), expectedSkillName);
-		click(By.id(skillSaveBtn));
-		driver.findElement(By.xpath(newTagField)).sendKeys(expectedTags);
-		driver.findElement(By.xpath(newTagField)).sendKeys(Keys.ENTER);
+		click(By.id(Skills.skillsetAddBtn));
+		click(By.id(Skills.skillName));
+		writeText(By.id(Skills.skillName), Skills.expectedSkillName);
+		click(By.id(Skills.skillSaveBtn));
+		driver.findElement(By.xpath(Skills.newTagField)).sendKeys(Skills.expectedTags);
+		driver.findElement(By.xpath(Skills.newTagField)).sendKeys(Keys.ENTER);
 	}
 
 	public void removeExp() {
-		click(By.id(removeExpBtn));
+		click(By.id(Skills.removeExpBtn));
 	}
 
 	public void removeEdu() {
-		click(By.id(removeEduBtn));
+		click(By.id(Skills.removeEduBtn));
 		driver.switchTo().alert().accept();
 	}
 
 	public void removeSkll() {
-		click(By.id(removeSkillBtn));
+		click(By.id(Skills.removeSkillBtn));
 		driver.switchTo().alert().accept();
 	}
 
 	public void removeProj() {
-		click(By.id(removeProjBtn));
+		click(By.id(Skills.removeProjBtn));
 	}
 
 	public void removeMainProj() {
-		click(By.id(removeMainProjBtn));
+		click(By.id(Skills.removeMainProjBtn));
 	}
 
 	public void addNewHire() {
-		click(By.id(newHireBtn));
+		click(By.id(Skills.newHireBtn));
 	}
 }

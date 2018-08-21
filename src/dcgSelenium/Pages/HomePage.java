@@ -8,6 +8,9 @@ public class HomePage extends BasePage {
 
 	public HomePage(WebDriver driver, WebDriverWait wait) {
 		super(driver, wait);
+	
+	
+		
 	}
 
 	String loginURL = "https://dynamic-cv-generator-test.firebaseapp.com/login";

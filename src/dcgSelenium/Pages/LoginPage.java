@@ -10,7 +10,9 @@ public class LoginPage extends BasePage {
 	
 	public LoginPage(WebDriver driver, WebDriverWait wait) {
 		super(driver, wait);
-	}
+	} 
+	
+
 
 	// web elements
 	String emailId = "email";

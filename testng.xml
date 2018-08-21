@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Default suite">
+  <test thread-count="5" verbose="2" name="Default test">
+    <classes>
+    <class name="dcgSelenium.Tests.T_001_logIn"/>
+    <class name="dcgSelenium.Tests.T_002_registerUser"/>
+    <class name="dcgSelenium.Tests.T_003_logOut"/>
+    <class name="dcgSelenium.Tests.T_004_addBasicInfo"/>
+    <class name="dcgSelenium.Tests.T_005_addEducation"/>
+      <class name="dcgSelenium.Tests.T_006_addExperience"/>
+    </classes>
+  </test> <!-- Default test -->
+</suite> <!-- Default suite -->
